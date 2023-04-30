@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+
+body {
+  background-color: #16202a;
+}
+
+footer {
+  margin-top: auto;
+  align-items: center;
+  line-height: 20px;
+  color: #f9fd6d;
+  text-align: center;
+}
+
+footer a {
+  display: flex;
+  align-items: center;
+}
