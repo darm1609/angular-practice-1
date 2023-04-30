@@ -12,9 +12,7 @@
     <div class="input-init">
       <span>Email Address</span>
       <input type="text" required [(ngModel)]="email" id="email" name="email" #emailInput="ngModel" class="input" placeholder="example@domain.com">
-      <div>
-        <p class="error" [style.opacity]="emailInput.invalid && emailInput.touched ? '1' : '0'">Required</p>
-      </div>
+      <p class="error" [style.opacity]="emailInput.invalid && emailInput.touched ? '1' : '0'">Required</p>
     </div>
   </div>
 
