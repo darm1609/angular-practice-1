@@ -1,17 +1,35 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Koulen&family=Lato&family=Nunito&family=Playfair+Display:ital@1&family=Prata&family=Raleway:ital,wght@1,100&family=Roboto&family=Roboto+Condensed&family=Teko&display=swap');
 
+/* Global */
+:root {
+  --background-color: #16202a;
+  --font-color-yellow: #f9fd6d;
+  --font-color-red: #ff0000;
+  --font-color-gray-1: #747474;
+  --font-color-gray-2: #333;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  background-color: #16202a;
-  color: #f9fd6d;
+  background-color: var(--background-color);
+  color: var(--font-color-yellow);
+}
+
+html {
+  font-family: Roboto, sans-serif;
 }
 
 footer {
-  font-family: Roboto, sans-serif;
   margin-top: auto;
   align-items: center;
   line-height: 20px;
-  color: #f9fd6d;
+  color: var(--font-color-yellow);
   text-align: center;
   font-size: small;
   width: 100%;
@@ -27,9 +45,9 @@ footer a {
 }
 
 footer .fa-heart {
-  color: red;
+  color: var(--font-color-red);
 }
 
 footer .textgray {
-  color: #747474;
+  color: var(--font-color-gray-1);
 }
