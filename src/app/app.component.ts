@@ -8,12 +8,16 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'angular-practice-1';
 
-  changeInput(){
+  isPasswordShown = false;
+
+  togglePassword(){
     const passwordInput = document.querySelector('#password') as HTMLInputElement;
     if (passwordInput.type === 'password') {
       passwordInput.type = 'text';
+      this.isPasswordShown = true;
     } else {
       passwordInput.type = 'password';
+      this.isPasswordShown = false;
     }
   }
 }

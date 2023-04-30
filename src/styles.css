@@ -24,3 +24,11 @@ footer a {
   display: flex;
   align-items: center;
 }
+
+footer .fa-heart {
+  color: red;
+}
+
+footer .textgray {
+  color: #747474;
+}
