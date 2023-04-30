@@ -7,7 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-practice-1';
-
+  email = '';
+  password = '';
   isPasswordShown = false;
 
   togglePassword(){
