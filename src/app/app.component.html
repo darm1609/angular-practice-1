@@ -11,7 +11,8 @@
   <div class="section">
     <div class="input-init">
       <span>Email Address</span>
-      <input type="text" required [(ngModel)]="email" id="email" name="email" #emailInput="ngModel" class="input" placeholder="example@domain.com">
+      <input type="text" required [(ngModel)]="email" id="email" name="email"
+        #emailInput="ngModel" class="input" placeholder="example@domain.com">
       <p class="error" [style.opacity]="emailInput.invalid && emailInput.touched ? '1' : '0'">Required</p>
     </div>
   </div>
@@ -19,7 +20,8 @@
   <div class="section">
     <div class="input-init">
       <span>Password</span>
-      <input type="password" required [(ngModel)]="password" id="password" name="password" #passwordInput="ngModel" class="input">
+      <input type="password" required [(ngModel)]="password" id="password" name="password"
+        #passwordInput="ngModel" class="input">
       <button type="button" class="show-password-btn" [ngClass]="{'active': isPasswordShown}">
         <i class="fas fa-eye" (click)="togglePassword()"></i>
       </button>
