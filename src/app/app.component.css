@@ -33,6 +33,7 @@ p {
   color: #ffffff;
   font-weight: bolder;
   font-size: xx-large;
+  padding: 1em;
 }
 
 a,
@@ -54,12 +55,11 @@ a:hover {
   background-color: Transparent;
   padding: 10px 30px;
   border: 1px solid #ffffff;
-  box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
   border-radius: 50px;
   transition : 1000ms;
   transform: translateY(0);
   cursor: pointer;
-  width: 50%;
+  width: 100%;
 }
 
 .btn1:hover{
@@ -67,10 +67,103 @@ a:hover {
   color:rgb(0, 0, 0)
 }
 
+.btn2{
+  font-family: Roboto, sans-serif;
+  font-weight: 0;
+  font-size: 14px;
+  color: #16202a;
+  background-color: #ffffff;
+  padding: 10px 30px;
+  border: 1px solid #ffffff;
+  border-radius: 50px;
+  transition : 1000ms;
+  transform: translateY(0);
+  cursor: pointer;
+  width: 100%;
+}
+
+.btn2:hover{
+  background-color: transparent;
+  color:rgb(255, 255, 255)
+}
+
+.show-password-btn {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.show-password-btn i {
+  font-size: 20px;
+  color: #333;
+}
+
+.show-password-btn i:hover {
+  color: #f9fd6d;
+}
+
+.show-password-btn.active i:before {
+  content: "\f070";
+}
+
+.show-password-btn.active i:hover {
+  color: #f9fd6d;
+}
+
+.input {
+  background-color: Transparent;
+  padding: 10px 30px;
+  border: 1px solid #ffffff;
+  border-radius: 50px;
+  width: 100%;
+  box-sizing: border-box;
+  color: #ffffff;
+}
+
+.form {
+  padding-top: 1em;
+  padding-bottom: 1em;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 400px;
+  text-align: center;
+}
+
+.input-init {
+  position: relative;
+  margin-top: 1.5em;
+  width: 100%;
+}
+
+.input-init span {
+  position: absolute;
+  top: -20px;
+  left: 0;
+  font-size: 14px;
+  color: #f9fd6d;
+}
+
+.checkRememberMe {
+  text-align: left;
+  color: #f9fd6d;
+}
+
+input[type="checkbox"] {
+  cursor: pointer;
+}
+
+label[for=rememberMe] {
+  cursor: pointer;
+}
+
 /* Responsive Styles */
 @media screen and (max-width: 767px) {
   .btn1 {
-    width: 75%;
+    width: 100%;
   }
 }
 

@@ -12,9 +12,32 @@
     Welcome To Wires
   </div>
 
-  <button href="#" class="btn1">Sing up</button>
+  <div class="form">
+    <button href="#" class="btn1">Sing up</button>
+  </div>
 
+  <form class="form">
+    <div class="input-init">
+      <span>Email Address</span>
+      <input type="text" class="input" placeholder="example@domain.com">
+    </div>
+    <br>
+    <div class="input-init">
+      <span>Password</span>
+      <input type="password" id="password" class="input">
+      <button type="button" class="show-password-btn" (click)="changeInput()">
+        <i class="fas fa-eye"></i>
+      </button>
+    </div>
+  </form>
 
+  <div class="form">
+    <button href="#" class="btn2">Sing in</button>
+  </div>
+
+  <div class="form checkRememberMe">
+    <input type="checkbox" id="rememberMe" class="custom-checkbox"><label for="rememberMe">Remember Me</label>
+  </div>
 
 </div>
 
