@@ -7,11 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-practice-1';
-  email = '';
-  password = '';
   isPasswordShown = false;
 
-  togglePassword(){
+  logueo = {
+    email: '',
+    password: ''
+  }
+
+  togglePassword() {
     const passwordInput = document.querySelector('#password') as HTMLInputElement;
     if (passwordInput.type === 'password') {
       passwordInput.type = 'text';
@@ -20,5 +23,9 @@ export class AppComponent {
       passwordInput.type = 'password';
       this.isPasswordShown = false;
     }
+  }
+
+  onLogin() {
+    console.log(this.logueo)
   }
 }
