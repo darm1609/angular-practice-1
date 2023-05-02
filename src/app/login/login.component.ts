@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { UserLogin } from '../models/userLogin.model';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -10,16 +10,21 @@ export class LoginComponent implements OnInit {
   title = 'angular-practice-1';
   isPasswordShown = false;
 
-  logueo = {
+  public logueo = {
     email: '',
     password: ''
+  }
+
+  private userLogin: UserLogin = {
+    success: true,
+    token: ''
   }
 
   ngOnInit(): void {
 
   }
 
-  togglePassword() {
+  public togglePassword() {
     const passwordInput = document.querySelector('#password') as HTMLInputElement;
     if (passwordInput.type === 'password') {
       passwordInput.type = 'text';
@@ -30,7 +35,7 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  onLogin() {
+  public onLogin() {
     console.log(this.logueo)
   }
 }
