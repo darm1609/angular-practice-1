@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IUserLogin } from '../models/userLogin.model';
+import { IUserLogin } from '../../models/userLogin.model';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -15,10 +15,7 @@ export class LoginComponent implements OnInit {
     password: ''
   }
 
-  private userLogin: IUserLogin = {
-    success: true,
-    token: ''
-  }
+  private userLogin!: IUserLogin;
 
   ngOnInit(): void {
 
