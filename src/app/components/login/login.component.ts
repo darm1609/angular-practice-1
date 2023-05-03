@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ILogin } from '../../models/login.model';
 import { IUserLogin } from '../../models/userLogin.model';
 @Component({
   selector: 'app-login',
@@ -8,18 +9,16 @@ import { IUserLogin } from '../../models/userLogin.model';
 
 export class LoginComponent implements OnInit {
   title = 'angular-practice-1';
-  isPasswordShown = false;
+  isPasswordShown: boolean = false;
 
-  public logueo = {
+  public logueo: ILogin = {
     email: '',
     password: ''
-  }
+  };
 
   private userLogin!: IUserLogin;
 
-  ngOnInit(): void {
-
-  }
+  ngOnInit(): void {}
 
   public togglePassword(): void {
     const passwordInput = document.querySelector('#password') as HTMLInputElement;
