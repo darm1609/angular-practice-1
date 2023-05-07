@@ -62,6 +62,17 @@ export class LoginComponent implements OnInit {
       return;
     }
 
-
+    this.usersService.onLogin(this.logueo).subscribe({
+      next: (data: any) => {
+        console.log(data);
+        this.usersService.saveLoginData(data);
+      },
+      error: () => {
+        this.noValidForm = true;
+      },
+      complete: () => {
+        // código para manejar la finalización de la llamada al servicio
+      }
+    });
   }
 }
