@@ -51,6 +51,20 @@ export class LoginComponent implements OnInit {
     }
   }
 
+  public checkFormAndLoading(): boolean {
+    this.loginForm.setValue({
+      email: this.logueo.email,
+      password: this.logueo.password
+    });
+
+    if ((this.loginForm.valid && this.isLoading) ||
+          this.loginForm.invalid) {
+      return true;
+    }
+
+    return false;
+  }
+
   public onLogin(): void {
 
     this.noValidForm = false;

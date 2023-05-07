@@ -69,7 +69,7 @@ form {
   padding: 10px 30px;
   border: 1px solid #ffffff;
   border-radius: 50px;
-  transition : 1000ms;
+  transition : 200ms;
   transform: translateY(0);
   cursor: pointer;
   width: 100%;
