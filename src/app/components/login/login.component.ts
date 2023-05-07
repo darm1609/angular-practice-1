@@ -1,6 +1,9 @@
+import { UsersService } from './../../services/users.service';
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormBuilder, FormGroup, Validators  } from '@angular/forms';
 import { ILogin } from '../../models/login.model';
 import { IUserLogin } from '../../models/userLogin.model';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -8,8 +11,12 @@ import { IUserLogin } from '../../models/userLogin.model';
 })
 
 export class LoginComponent implements OnInit {
+
   title = 'angular-practice-1';
   isPasswordShown: boolean = false;
+  noValidForm: boolean | null = null;
+
+  public loginForm: FormGroup;
 
   public logueo: ILogin = {
     email: '',
@@ -17,6 +24,16 @@ export class LoginComponent implements OnInit {
   };
 
   private userLogin!: IUserLogin;
+
+  constructor(
+    private formBuilder: FormBuilder,
+    private usersService: UsersService,
+    ) {
+    this.loginForm = this.formBuilder.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', Validators.required]
+    });
+  }
 
   ngOnInit(): void {}
 
@@ -32,6 +49,19 @@ export class LoginComponent implements OnInit {
   }
 
   public onLogin(): void {
-    console.log(this.logueo)
+
+    this.noValidForm = false;
+
+    this.loginForm.setValue({
+      email: this.logueo.email,
+      password: this.logueo.password
+    });
+
+    if (!this.loginForm.valid) {
+      this.noValidForm = true;
+      return;
+    }
+
+
   }
 }

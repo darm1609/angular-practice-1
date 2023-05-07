@@ -158,6 +158,13 @@ form {
   transition : 600ms;
 }
 
+.error {
+  font-family: Roboto, sans-serif;
+  color: var(--font-color-red);
+  font-size: 12px;
+  transition : 600ms;
+}
+
 .checkRememberMe {
   text-align: left;
   color: var(--font-color-yellow);

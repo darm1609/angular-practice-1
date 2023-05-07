@@ -64,11 +64,16 @@
         Sing in
       </button>
     </div>
+
   </form>
 
   <div class="section checkRememberMe">
     <input type="checkbox" id="rememberMe" class="custom-checkbox" />
     <label for="rememberMe">Remember Me</label>
+  </div>
+
+  <div class="section">
+    <p class="error" *ngIf="noValidForm">Something is wrong</p>
   </div>
 </div>
 
