@@ -74,7 +74,9 @@
 
   <div class="section">
     <p class="error" *ngIf="noValidForm">Something is wrong</p>
+    <p class="text" *ngIf="isLoading"><i class="fa fa-spinner fa-spin"></i> Loading...</p>
   </div>
+
 </div>
 
 <router-outlet></router-outlet>

@@ -15,6 +15,7 @@ export class LoginComponent implements OnInit {
 
   title = 'angular-practice-1';
   isPasswordShown: boolean = false;
+  isLoading: boolean = false;
   noValidForm: boolean | null = null;
 
   public loginForm: FormGroup;
@@ -64,17 +65,24 @@ export class LoginComponent implements OnInit {
       return;
     }
 
+    this.isLoading = true;
     this.usersService.onLogin(this.logueo).subscribe({
       next: (data: IUserLogin) => {
         console.log(data);
+        if (!data.success) {
+          this.noValidForm = true;
+          return
+        }
         this.usersService.saveLoginData(data);
         this.router.navigate(['home']);
       },
       error: () => {
         this.noValidForm = true;
+        this.isLoading = false;
       },
       complete: () => {
         // código para manejar la finalización de la llamada al servicio
+        this.isLoading = false;
       }
     });
   }
