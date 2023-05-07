@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { CookieService } from 'ngx-cookie-service';
 import { HttpClient } from '@angular/common/http';
-import { IUserLogin } from '../models/userLogin.model';
-import { ILogin } from '../models/login.model';
+import { IUserLogin } from '../../models/userLogin.model';
+import { ILogin } from '../../models/login.model';
 import { Observable } from 'rxjs';
 
 @Injectable({
