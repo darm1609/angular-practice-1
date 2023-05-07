@@ -63,7 +63,7 @@ export class LoginComponent implements OnInit {
     }
 
     this.usersService.onLogin(this.logueo).subscribe({
-      next: (data: any) => {
+      next: (data: IUserLogin) => {
         console.log(data);
         this.usersService.saveLoginData(data);
       },
