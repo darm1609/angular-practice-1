@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormBuilder, FormGroup, Validators  } from '@angular/forms';
 import { ILogin } from '../../models/login.model';
 import { IUserLogin } from '../../models/userLogin.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -28,6 +29,7 @@ export class LoginComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private usersService: UsersService,
+    private router: Router
     ) {
     this.loginForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
@@ -66,6 +68,7 @@ export class LoginComponent implements OnInit {
       next: (data: IUserLogin) => {
         console.log(data);
         this.usersService.saveLoginData(data);
+        this.router.navigate(['home']);
       },
       error: () => {
         this.noValidForm = true;
