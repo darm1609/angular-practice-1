@@ -4,6 +4,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { HttpClient } from '@angular/common/http';
 import { IUserLogin } from '../models/userLogin.model';
 import { ILogin } from '../models/login.model';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -17,8 +18,7 @@ export class UsersService {
     private http: HttpClient
   ){ }
 
-
-  onLogin(user: ILogin) : any {
+  onLogin(user: ILogin) : Observable<IUserLogin> {
     return this.http.post<IUserLogin>(`${this.URL_API}/user/login_user`, user)
   }
 
