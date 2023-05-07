@@ -69,7 +69,7 @@ form {
   padding: 10px 30px;
   border: 1px solid #ffffff;
   border-radius: 50px;
-  transition : 1000ms;
+  transition : 200ms;
   transform: translateY(0);
   cursor: pointer;
   width: 100%;
@@ -155,6 +155,20 @@ form {
   color: var(--font-color-red);
   font-size: 10px;
   opacity: 0;
+  transition : 600ms;
+}
+
+.error {
+  font-family: Roboto, sans-serif;
+  color: var(--font-color-red);
+  font-size: 12px;
+  transition : 600ms;
+}
+
+.text {
+  font-family: Roboto, sans-serif;
+  color: var(--font-color-yellow);
+  font-size: 12px;
   transition : 600ms;
 }
 
