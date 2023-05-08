@@ -19,7 +19,6 @@ export class LoggedOutService {
   ) { }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
-
     let userCookie : string = this.cookieService.get('user');
     let tokenCookie : string = this.cookieService.get('token');
 
@@ -43,6 +42,6 @@ export class LoggedOutService {
     };
 
     this.router.navigate(['/home']);
-    return true;
+    return false;
   }
 }

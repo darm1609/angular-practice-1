@@ -2,15 +2,18 @@ import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { CookieService } from 'ngx-cookie-service';
 import { HttpClient } from '@angular/common/http';
-import { IUserLogin } from '../../models/userLogin.model';
+import { IUserLogin, IUser } from '../../models/userLogin.model';
 import { ILogin } from '../../models/login.model';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsersService {
+
+  private userLogged = new BehaviorSubject<IUser | null>(null);
+  public userLogged$ = this.userLogged.asObservable();
 
   private URL_API = `${environment.HOST}`;
 
@@ -26,7 +29,10 @@ export class UsersService {
 
   onLoginOff() {
     this.cookieService.deleteAll();
-    this.router.navigate(['/home']);
+  }
+
+  onAddUserObservable(user : IUser){
+    this.userLogged.next(user);
   }
 
   saveLoginData(userLogin: IUserLogin, rememberMe: boolean) : void {
@@ -44,6 +50,7 @@ export class UsersService {
       this.cookieService.set('user', JSON.stringify(userLogin.user));
     }
 
-  }
+    this.onAddUserObservable(userLogin.user);
 
+  }
 }
