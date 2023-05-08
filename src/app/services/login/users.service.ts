@@ -4,6 +4,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { HttpClient } from '@angular/common/http';
 import { IUserLogin } from '../../models/userLogin.model';
 import { ILogin } from '../../models/login.model';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -14,12 +15,18 @@ export class UsersService {
   private URL_API = `${environment.HOST}`;
 
   constructor(
+    private router : Router,
     private cookieService : CookieService,
     private http: HttpClient
   ){ }
 
   onLogin(user: ILogin) : Observable<IUserLogin> {
     return this.http.post<IUserLogin>(`${this.URL_API}/user/login_user`, user)
+  }
+
+  onLoginOff() {
+    this.cookieService.deleteAll();
+    this.router.navigate(['/home']);
   }
 
   saveLoginData(userLogin: IUserLogin, rememberMe: boolean) : void {
