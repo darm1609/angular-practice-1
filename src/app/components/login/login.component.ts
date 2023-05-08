@@ -1,6 +1,6 @@
 import { UsersService } from '../../services/login/users.service';
-import { Component, OnInit } from '@angular/core';
-import { FormControl, FormBuilder, FormGroup, Validators  } from '@angular/forms';
+import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators  } from '@angular/forms';
 import { ILogin } from '../../models/login.model';
 import { IUserLogin } from '../../models/userLogin.model';
 import { Router } from '@angular/router';
@@ -11,13 +11,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 
-export class LoginComponent implements OnInit {
+export class LoginComponent {
 
-  title = 'angular-practice-1';
-  isPasswordShown: boolean = false;
-  isLoading: boolean = false;
-  noValidForm: boolean | null = null;
-  rememberMe: boolean = false;
+  public title = 'angular-practice-1';
+  public isPasswordShown = false;
+  public isLoading = false;
+  public noValidForm: boolean | null = null;
+  public rememberMe = false;
 
   public loginForm: FormGroup;
 
@@ -38,8 +38,6 @@ export class LoginComponent implements OnInit {
       password: ['', Validators.required]
     });
   }
-
-  ngOnInit(): void {}
 
   public togglePassword(): void {
     const passwordInput = document.querySelector('#password') as HTMLInputElement;

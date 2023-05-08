@@ -1,6 +1,6 @@
 import { IUser } from './../../models/userLogin.model';
 import { UsersService } from './../../services/login/users.service';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 
@@ -9,7 +9,7 @@ import { CookieService } from 'ngx-cookie-service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
 
   public userLoggedName : string | undefined = undefined;
 

@@ -10,3 +10,9 @@ export interface IUser {
   email: string,
   fullUserName: string
 }
+
+export interface IUserJwtToken {
+  iat: number,
+  exp: number,
+  user: IUser
+}
