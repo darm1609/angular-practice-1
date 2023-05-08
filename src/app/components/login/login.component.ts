@@ -17,6 +17,7 @@ export class LoginComponent implements OnInit {
   isPasswordShown: boolean = false;
   isLoading: boolean = false;
   noValidForm: boolean | null = null;
+  rememberMe: boolean = false;
 
   public loginForm: FormGroup;
 
@@ -87,7 +88,7 @@ export class LoginComponent implements OnInit {
           this.noValidForm = true;
           return
         }
-        this.usersService.saveLoginData(data);
+        this.usersService.saveLoginData(data, this.rememberMe);
         this.router.navigate(['home']);
       },
       error: () => {
